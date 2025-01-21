@@ -22,10 +22,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('tentang-kami', [AboutController::class, 'index'])->name('tentang-kami');
 Route::get('paket-travel', [TravelPackageController::class, 'index'])->name('paket-travel');
-Route::get('paket-travel/{travel_package:slug}', [TravelPackageController::class, 'show'])->name('travel.detail');
-Route::get('paket-travel/{travel_package:slug}/payment', [OrderController::class, 'show'])->name('travel.payment');
+Route::get('{travel_package:slug}', [TravelPackageController::class, 'show'])->name('travel.detail');
+Route::get('{travel_package:slug}/payment', [OrderController::class, 'show'])->name('travel.payment');
 Route::get('blog', [BlogController::class, 'index'])->name('blog');
 Route::get('pkl', [PklController::class, 'index'])->name('pkl');
 Route::get('blog/{post:slug}', [BlogController::class, 'show'])->name('blog.show');
 
-Route::post('paket-travel/{travel_package:slug}/payment/checkout', [OrderController::class, 'checkout'])->name('payment.checkout');
+Route::post('{travel_package:slug}/payment/checkout', [OrderController::class, 'checkout'])->name('payment.checkout');

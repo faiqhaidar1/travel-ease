@@ -15,6 +15,7 @@ class OrderController extends Controller
 
     public function payment(TravelPackage $travelPackage)
     {
+        // Kirim travelPackage ke view
         return view('frontend.travel.payment', compact('travelPackage'));
     }
 
@@ -50,7 +51,6 @@ class OrderController extends Controller
         $data['total_price'] = $total_price;
         $data['status'] = $request->status ?? 'Belum Dibayar';  // Set default status jika tidak ada
 
-
         // Simpan data ke tabel 'orders' dengan field yang sesuai
         $order = Order::create($data);
 
@@ -75,6 +75,8 @@ class OrderController extends Controller
         );
 
         $snapToken = \Midtrans\Snap::getSnapToken($params);
-        return view('frontend.travel.checkout', compact('snapToken', 'order'));
+
+        // Kirimkan snapToken dan order ke view
+        return view('frontend.travel.checkout', compact('snapToken', 'order', 'travel_package'));
     }
 }

@@ -33,6 +33,6 @@ class TravelPackage extends Model
         }
 
         // Kirimkan data travel_package ke view
-        return view('frontend.payment', compact('travel_package'));
+        return view('frontend.travel.payment', compact('travel_package'));
     }
 }
