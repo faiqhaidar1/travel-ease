@@ -59,6 +59,9 @@
                         <a class="nav-link px-3" href="{{ route('home') }}#tentang-kami">Tentang Kami</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link px-3" href="{{ route('home') }}#artikel">Artikel</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link px-3" href="{{ route('home') }}#contact-us">Kontak</a>
                     </li>
                 </ul>
@@ -133,7 +136,7 @@
             <hr>
         </span>
         <div class="footer-bottom">
-            <p>Copyright © 2023 Travel Ease</p>
+            <p>Copyright © 2025 Travel Ease</p>
             <div class="footer-links">
 
             </div>

@@ -4387,6 +4387,12 @@ body {
     margin-left: -93%;
 }
 
+.form-group .kritik-saran {
+    align-items: start;
+    justify-content: start;
+    margin-left: -69%;
+}
+
 .input-contact input,
 .input-contact textarea {
     width: 100%;

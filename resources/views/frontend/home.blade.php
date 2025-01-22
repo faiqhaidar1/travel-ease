@@ -277,12 +277,12 @@
      
     <div id="pilih-tujuan" class="container py-5">
          <!-- Content Section -->
-         <div class="content-menu-judul-destinasi">
+        <div class="content-menu-judul-destinasi">
              <!-- Title Section -->
-          <div class="content-text-top-destinasi">
-            <p class="text-pink">Tujuan Teratas</p>
-            <h1 class="font-bold">Jelajahi tujuan teratas</h1>
-          </div>
+            <div class="content-text-top-destinasi">
+                <p class="text-pink">Tujuan Teratas</p>
+                <h1 class="font-bold">Jelajahi tujuan teratas</h1>
+            </div>
           
       
           <!-- Menu Category Section -->
@@ -293,22 +293,22 @@
             <button class="menu-btn" onclick="filterCategory('forest')">Hutan</button>
             <button class="menu-btn" onclick="filterCategory('island')">Pulau</button>
         </div> --}}
-    </div>
-    <div class="tujuan">
-    @foreach ($travel_packages as $travel_package)
-        <div class="tujuan-flex col-lg-4 col-md-6 col-sm-12 mb-4">
-            <div class="card shadow-sm border-0">
-                <img src="{{ Storage::url($travel_package->galleries->first()->image) }}" class="card-img-top" style="height: 300px; object-fit: cover;" alt="{{ $travel_package->galleries->first()->title }}">
-                <div class="card-body text-center">
-                    <h5 class="card-title">{{ $travel_package->title }}</h5>
-                </div>
-                <div class="card-footer bg-transparent d-flex justify-content-center p-0">
-                    <a href="{{ route('travel.detail', $travel_package->slug) }}" class="btn btn-primary w-100">Detail</a>
+        </div>
+        <div class="tujuan">
+        @foreach ($travel_packages as $travel_package)
+            <div class="tujuan-flex col-lg-4 col-md-6 col-sm-12 mb-4">
+                <div class="card shadow-sm border-0">
+                    <img src="{{ Storage::url($travel_package->galleries->first()->image) }}" class="card-img-top" style="height: 300px; object-fit: cover;" alt="{{ $travel_package->galleries->first()->title }}">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{{ $travel_package->title }}</h5>
+                    </div>
+                    <div class="card-footer bg-transparent d-flex justify-content-center p-0">
+                        <a href="{{ route('travel.detail', $travel_package->slug) }}" class="btn btn-primary w-100">Detail</a>
+                    </div>
                 </div>
             </div>
+        @endforeach
         </div>
-    @endforeach
-    </div>
    
 
     
@@ -505,6 +505,41 @@
     
     {{-- Close Service Section --}}
     
+    <div id="artikel" class="container py-5">
+        <!-- Content Section -->
+       <div class="content-menu-judul-destinasi">
+            <!-- Title Section -->
+           <div class="content-text-top-destinasi">
+               <p class="text-pink">Artikel Teratas</p>
+               <h1 class="font-bold">Baca Artikel Teratas</h1>
+           </div>
+         
+     
+         <!-- Menu Category Section -->
+         {{-- <div class="menu-category">
+           <button class="menu-btn active" onclick="filterCategory('all')">Lihat Semua</button>
+           <button class="menu-btn" onclick="filterCategory('city')">Kota</button>
+           <button class="menu-btn" onclick="filterCategory('mountain')">Gunung</button>
+           <button class="menu-btn" onclick="filterCategory('forest')">Hutan</button>
+           <button class="menu-btn" onclick="filterCategory('island')">Pulau</button>
+       </div> --}}
+       </div>
+       <div class="tujuan">
+       @foreach ($posts as $post)
+           <div class="tujuan-flex col-lg-4 col-md-6 col-sm-12 mb-4">
+               <div class="card shadow-sm border-0">
+                    <a href="{{ route('artikel.show', $post->slug) }}" style="color: #111;text-decoration: none">
+                        <img src="{{ Storage::url($post->thumbnail) }}" style="height: 500px;object-fit: cover;" class="card-img-top"
+                            alt="{{ $post->title }}">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">{{ $post->title }}</h5>
+                        </div>
+                    </a>
+               </div>
+           </div>
+       @endforeach
+        </div>
+
     {{-- Open Experience --}}
 
     <div class="container py-3">
@@ -649,9 +684,9 @@
         </div>
 
         <!-- Input Contact Form -->
-        {{-- <div class="input-contact">
-            <h3>Contact Us</h3>
-            <form action="/submit-contact" method="POST">
+        <div class="input-contact">
+            <h3>Kritik dan Saran</h3>
+            <form action="" method="POST">
                 <div class="form-group">
                     <label for="name">Nama</label>
                     <input type="text" id="name" name="name" placeholder="Masukan nama anda" required>
@@ -661,20 +696,16 @@
                     <input type="email" id="email" name="email" placeholder="Masukan email anda" required>
                 </div>
                 <div class="form-group">
-                    <label for="message">Pesan</label>
+                    <label class="kritik-saran" for="message">Masukkan Pesan dan Kesan</label>
                     <textarea id="message" name="message" placeholder="Masukan pesan & kesan anda" rows="4" required></textarea>
                 </div>
                 <button href="javascript:void(0);" class="checkout-button" onclick="showLoginModal()" type="submit">Send Message</button>
             </form>
-        </div> --}}
+        </div>
         </div>
     
     </div>
     </div>
 
         {{-- Close Contact --}}
-
-    
-
-
 @endsection

@@ -26,6 +26,6 @@ Route::get('{travel_package:slug}', [TravelPackageController::class, 'show'])->n
 Route::get('{travel_package:slug}/payment', [OrderController::class, 'show'])->name('travel.payment');
 Route::get('blog', [BlogController::class, 'index'])->name('blog');
 Route::get('pkl', [PklController::class, 'index'])->name('pkl');
-Route::get('blog/{post:slug}', [BlogController::class, 'show'])->name('blog.show');
+Route::get('artikel/{post:slug}', [BlogController::class, 'show'])->name('artikel.show');
 
 Route::post('{travel_package:slug}/payment/checkout', [OrderController::class, 'checkout'])->name('payment.checkout');
